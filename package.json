@@ -1,0 +1,27 @@
+{
+  "name": "uk-police-data",
+  "version": "1.0.0",
+  "description": "A web application that uses the public API from Data.Police.UK to present crime statistics to the user.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachariasKing/uk-police-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachariasKing/uk-police-data/issues"
+  },
+  "homepage": "https://github.com/ZachariasKing/uk-police-data#readme",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "ejs": "^3.1.10",
+    "encrypted-env": "^0.2.1",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+
+<p>Valid crime categories: </br> <%= categories.join(', ') %></p>
+
+<form action="/crime-data" method="POST">
+    <input type="text" name="category" placeholder="Enter crime category">
+    <input type="text" name="date" id="date" placeholder="Enter date (YYYY-MM)">
+    <input type="text" name="latitude" placeholder="Enter latitude">
+    <input type="text" name="longitude" placeholder="Enter longitude">
+    <button type="submit">Get Crime Data</button>
+</form>
+
+<%- include('partials/footer.ejs') %>
