@@ -32,4 +32,4 @@ A web application that uses the public API from [Data.Police.UK](https://data.po
   
 
 ## Deployment
-This project had been deployed using [Render](https://uk-police-data.onrender.com/crime-data).
+This project had been deployed using [Render](https://uk-police-data.onrender.com).
