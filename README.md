@@ -50,7 +50,10 @@ _Below is an example of how you can instruct your audience on installing and set
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
    ```
-
+7. Run the app:
+   ```sh
+   node --env-file=.env index.js
+   ```
 
 ## Deployment
 This project had been deployed using [Render](https://uk-police-data.onrender.com).
