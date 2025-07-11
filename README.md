@@ -11,25 +11,46 @@ A web application that uses the public API from [Data.Police.UK](https://data.po
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#Deployment">Usage</a></li>
   </ol>
 </details>
 
 ## About the Project
 
+
 ## Built With
 
 * Node.js
 * Bootstrap
 * EJS Templating
-  
+
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. You will also need your own GeoApify API key which you can get here: [Geoapify](https://www.geoapify.com/)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/ZachariasKing/uk-police-data.git
+   ```
+3. Install NPM packages (You may also need to run npm audit fix to download the latest versions of dependencies)
+   ```sh
+   npm install
+   ```
+4. Create a .env file in the project root directory and add the line:
+   ```
+   GEOAPIFY_API_KEY = '<api key here>'
+   ```  
+5. **(Make sure you add the .env file to your .gitignore so you don't expose your API key!!!)**
+
+6. Change git remote url to avoid accidental pushes to base project
+   ```sh
+   git remote set-url origin github_username/repo_name
+   git remote -v # confirm the changes
+   ```
+
 
 ## Deployment
 This project had been deployed using [Render](https://uk-police-data.onrender.com).
