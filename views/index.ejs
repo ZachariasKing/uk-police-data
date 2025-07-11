@@ -31,7 +31,14 @@
   <br />
   <% }); %>
 </ul>
-<% } %> <% if(locals.error){ %>
-<div><%= error %></div>
 
-<% } %> <%- include('partials/footer.ejs') %>
+<div id="error">
+  <% } %> <% if(locals.error){ %>
+  <p><%= error %></p>
+  <% } else if(locals.data && locals.data.length === 0) { %>
+  <p>No Data Found</p>
+
+  <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>
