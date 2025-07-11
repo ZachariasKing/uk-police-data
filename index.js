@@ -44,7 +44,7 @@ app.post(
     try {
       // Use GeoApify API to get latitude and longitude from postcode
       const geoResponse = await axios.get(
-        `https://api.geoapify.com/v1/geocode/search?postcode=${postcode}&format=json&apiKey=REMOVED`
+        `https://api.geoapify.com/v1/geocode/search?postcode=${postcode}&format=json&apiKey=${process.env.GEOAPIFY_API_KEY}`
       );
       const coords = {
         lat: geoResponse.data.results[0].lat,
