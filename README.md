@@ -1,5 +1,5 @@
 # uk-police-data
-A web application that uses the public API from [Data.Police.UK](https://data.police.uk/) to present UK crime statistics to the user.The user can enter a valid crime category, date (YYY-MM) and post code to retrieve crime statistics from that area. 
+A web application that uses the public API from [Data.Police.UK](https://data.police.uk/) to present UK crime statistics to the user. Currently, the user can enter a valid crime category, date (YYY-MM) and post code to retrieve crime statistics from that area. 
 
 <!-- TABLE OF CONTENTS -->
 <details>
