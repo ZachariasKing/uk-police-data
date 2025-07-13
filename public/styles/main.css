@@ -1,1 +1,16 @@
 /* TODO: Main colour theme and styling for web app */
+:root {
+  --primary-color-delft-blue: #313D5A; /* Delft Blue */
+  --secondary-color-pomp-and-power: #73628A; /* Pomp and Power */
+  --accent-color-periwinkle: #CBC5EA; /* Periwinkle */
+  --background-color-gunmetal: #183642ff; /* Gunmetal */
+  --text-color-platinum: #eaeaeaff; /* Platinum */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color-gunmetal);
+  color: var(--text-color-platinum);
+  margin: 0;
+  padding: 20px;
+}

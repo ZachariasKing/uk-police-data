@@ -7,14 +7,27 @@
   <%= categories.join(', ') %>
 </p>
 
-<form action="/crime-data" method="POST">
-  <input type="text" name="category" placeholder="Enter crime category" />
-  <input type="text" name="date" id="date" placeholder="Enter date (YYYY-MM)" />
-  <input type="text" name="postcode" placeholder="Enter postcode" />
+<form id="crime-data-form" action="/crime-data" method="POST">
+  <label for="category">Choose a crime category:</label>
+  <select name="category" id="category" required>
+    <option value="" disabled selected>Select a category</option>
+    <% categories.forEach(category => { %>
+    <option value="<%= category %>"><%= category %></option>
+    <% }); %>
+  </select>
+  <label for="date">Enter date (YYYY-MM):</label>
+  <input type="month" id="date" name="date" min="2020-03" required />
+  <label for="postcode">Enter postcode:</label>
+  <input
+    type="text"
+    name="postcode"
+    id="postcode"
+    placeholder="e.g. SW1A 1AA"
+  required/>
   <button type="submit">Get Crime Data</button>
 </form>
 
-<p><% if(locals.data){ %></p>
+<% if(locals.data){ %>
 <ul>
   <% locals.data.forEach(crime => { %>
   <li>
