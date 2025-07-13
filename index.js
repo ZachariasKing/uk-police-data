@@ -38,8 +38,9 @@ app.post(
   express.urlencoded({ extended: true }),
   async (req, res) => {
     const category = req.body.category;
-    const date = req.body.date;
+    const date = req.body.year + "-" + req.body.month;
     const postcode = req.body.postcode;
+    console.log(date);
 
     try {
       // Use GeoApify API to get latitude and longitude from postcode

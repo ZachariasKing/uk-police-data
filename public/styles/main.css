@@ -1,19 +1,78 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Override Materialize styles*/
+
 
 /* Main colour theme and styling for web app */
 :root {
-  --primary-color-delft-blue: #313D5A; /* Delft Blue */
-  --secondary-color-pomp-and-power: #73628A; /* Pomp and Power */
-  --accent-color-periwinkle: #CBC5EA; /* Periwinkle */
+  --primary-color-delft-blue: #313d5a; /* Delft Blue */
+  --secondary-color-pomp-and-power: #73628a; /* Pomp and Power */
+  --accent-color-periwinkle: #cbc5ea; /* Periwinkle */
   --background-color-gunmetal: #183642ff; /* Gunmetal */
   --text-color-platinum: #eaeaeaff; /* Platinum */
+
+    /* Complementary colors */
+  --highlight-color-sunset-gold: #d4a373;   /* Warm subtle highlight */
+  --link-color-slate-blue: #6a5acd;         /* Soft slate blue for links */
+  --success-color-seafoam: #8fdcc8;         /* Muted mint green */
+  --error-color-rosewood: #65000b;          /* Dark red for errors */
+  --info-color-storm-gray: #747c92;         /* For icons, muted labels */
+  --hover-color-indigo-dye: #2a2f4a;        /* Button/field hover state */
+  --border-color-steel: #3a4b59;            /* Subtle borders */
 }
 
+.delft-blue {
+    background-color: var(--primary-color-delft-blue);
+}
+
+.error {
+    background-color: var(--error-color-rosewood);
+}
+
+.periwinkle {
+    background-color: var(--accent-color-periwinkle);
+}
+
+.steel-grey {
+    background-color: var(--border-color-steel);
+}
+
+.slate-blue {
+    background-color: var(--link-color-slate-blue);
+}
+
+/* General styles */
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   background-color: var(--background-color-gunmetal);
   color: var(--text-color-platinum);
   margin: 0;
   padding: 20px;
+}
+
+/* Select Dropdown and content inside dropdown created by Materialize CSS */
+.select-dropdown {
+  color: var(--text-color-platinum) !important;
+  background-color: #313d5a; /* Delft Blue */
+}
+.dropdown-content li > a, 
+.dropdown-content li > span {
+  color: var(--text-color-platinum) !important;
+  background-color: #313d5a; /* Delft Blue */
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--link-color-slate-blue);
+  color: var(--text-color-platinum);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--secondary-color-pomp-and-power);
+}
+
+/* Hide day grid from datepicker */
+.datepicker-calendar-container .datepicker-table {
+  display: none !important;
 }

@@ -2,48 +2,110 @@
 
 <h1>UK Police Crime Data</h1>
 <p>Enter a crime category, date (YYYY-MM), and postcode to get crime data.</p>
-<p>
-  Valid crime categories: <br />
-  <%= categories.join(', ') %>
-</p>
 
-<form id="crime-data-form" action="/crime-data" method="POST">
-  <label for="category">Choose a crime category:</label>
-  <select name="category" id="category" required>
-    <option value="" disabled selected>Select a category</option>
-    <% categories.forEach(category => { %>
-    <option value="<%= category %>"><%= category %></option>
-    <% }); %>
-  </select>
-  <label for="date">Enter date (YYYY-MM):</label>
-  <input type="month" id="date" name="date" min="2020-03" required />
-  <label for="postcode">Enter postcode:</label>
-  <input
-    type="text"
-    name="postcode"
-    id="postcode"
-    placeholder="e.g. SW1A 1AA"
-  required/>
-  <button type="submit">Get Crime Data</button>
-</form>
+<div class="row">
+  <form name="crimeCategoryForm" class="col s12" id="crime-data-form" action="/crime-data" method="POST">
+    <div class="row">
+      <div class="input-field col s12">
+        <select id="category-dropdown" name="category">
+          <option value="" disabled selected>Select a category</option>
+          <% if(locals.categories){ categories.forEach(category => { %>
+          <option value="<%= category %>"><%= category %></option>
+          <% }); %> <% } %>
+        </select>
+        <label>Choose a crime category:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <fieldset>
+          <legend>Enter a Date:</legend>
+          <!-- Month Dropdown -->
+          <div class="input-field col s12 m6">
+            <select id="monthSelect" name="month">
+              <option value="" disabled selected>Choose month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <label>Month</label>
+          </div>
+
+          <!-- Year Dropdown -->
+          <div class="input-field col s12 m6">
+            <select id="yearSelect" name="year">
+              <option value="" disabled selected>Choose year</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+            </select>
+            <label>Year</label>
+          </div>
+          <!-- Read-only Final Field -->
+          <div class="input-field col s12">
+            <input type="text" id="finalDate" placeholder="YYYY-MM" readonly />
+            <label for="finalDate">Selected Date</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="postcode">Enter postcode:</label>
+        <input
+          type="text"
+          name="postcode"
+          id="postcode"
+          placeholder="e.g. SW1A 1AA"
+        />
+      </div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit">
+      Get Crime Data
+    </button>
+  </form>
+</div>
 
 <% if(locals.data){ %>
-<ul>
-  <% locals.data.forEach(crime => { %>
-  <li>
-    Crime Category: <%= crime.category %>
-    <ul>
-      <li>Location: <%= crime.location.street.name %></li>
-      <li>Date: <%= crime.date %></li>
-      <li>
-        Outcome: <%= crime.outcome_status ? crime.outcome_status.category: 'No outcome' %>
-      </li>
-      <li>Location Type: <%= crime.location.type %></li>
-    </ul>
-  </li>
-  <br />
-  <% }); %>
-</ul>
+<div class="row">
+  <ul>
+    <% locals.data.forEach(crime => { %>
+    <div class="col s12 m6 l3">
+      <div class="card steel-grey">
+        <div class="card-content">
+           <span class="card-title"><%= crime.category %></span>
+            <li>
+              <ul>
+                <li>Location: <%= crime.location.street.name %></li>
+                <li>Date: <%= crime.month %></li>
+                <li>
+                  Outcome: <%= crime.outcome_status ?
+                  crime.outcome_status.category: 'No outcome' %>
+                </li>
+                <li>Location Type: <%= crime.location_type %></li>
+              </ul>
+            </li>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </ul>
+</div>
 
 <div id="error">
   <% } %> <% if(locals.error){ %>
