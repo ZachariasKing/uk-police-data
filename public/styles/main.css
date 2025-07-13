@@ -1,4 +1,7 @@
-/* TODO: Main colour theme and styling for web app */
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Main colour theme and styling for web app */
 :root {
   --primary-color-delft-blue: #313D5A; /* Delft Blue */
   --secondary-color-pomp-and-power: #73628A; /* Pomp and Power */
@@ -8,7 +11,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   background-color: var(--background-color-gunmetal);
   color: var(--text-color-platinum);
   margin: 0;
